@@ -1,0 +1,7 @@
+<div id="smallbox">
+    <form name="myForm" #myForm="ngForm" method="post">
+    <label>Name:</label> 
+    <input required minlength="1" type="text" [(ngModel)]="user.username" name="name">
+    <button (click)="onClick()" [disabled]="!myForm.form.valid">Login</button>    
+    </form>
+</div>

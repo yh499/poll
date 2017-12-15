@@ -1,0 +1,18 @@
+<h1>Put the question and option here!</h1>
+<a [routerLink]="['/dashboard']">==cancel==</a><br>
+<form name="myForm" #myForm="ngForm" method="post">
+  <label>Question:</label>
+  <input required minlength="8" maxlength="30" type="text" [(ngModel)]="question" name="question"><br>
+  <label>Option1:</label>
+  <input required minlength="3" maxlength="30" type="text" [(ngModel)]="option1" name="option1"><br>
+  <label>Option2:</label>
+  <input required minlength="3" maxlength="30" type="text" [(ngModel)]="option2" name="option2"><br>
+  <label>Option3:</label>
+  <input required minlength="3" maxlength="30" type="text" [(ngModel)]="option3" name="option3"><br>
+  <label>Option4:</label>
+  <input required minlength="3" maxlength="30" type="text" [(ngModel)]="option4" name="option4"><br>
+  <span style="color:red" *ngIf="!myForm.valid">Question: (At least 8 Characters) and Options: (At least 3 Characters).Otherwise you cannot create your poll.  </span><br><br>
+  <button (click)="onCreate()" [disabled]="!myForm.form.valid">Create Poll</button>
+
+
+ </form>
